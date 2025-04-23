@@ -5,37 +5,50 @@ import * as THREE from 'three';
 
 export function Camera() {
 	const cameraRef = useRef<THREE.PerspectiveCamera>(null);
-	const { camera, size } = useThree();
+	const { gl } = useThree();
 	const mouse = useRef({ x: 0, y: 0 });
+	const isOverCanvas = useRef(false);
 
 	useEffect(() => {
+		const canvas = gl.domElement;
+
 		const handleMouseMove = (event: MouseEvent) => {
-			mouse.current.x = (event.clientX / size.width) * 2 - 1;
-			mouse.current.y = -(event.clientY / size.height) * 2 + 1;
+			const rect = canvas.getBoundingClientRect();
+			const withinX =
+				event.clientX >= rect.left && event.clientX <= rect.right;
+			const withinY =
+				event.clientY >= rect.top && event.clientY <= rect.bottom;
+			isOverCanvas.current = withinX && withinY;
+
+			if (isOverCanvas.current) {
+				mouse.current.x =
+					((event.clientX - rect.left) / rect.width) * 2 - 1;
+				mouse.current.y =
+					-((event.clientY - rect.top) / rect.height) * 2 + 1;
+			}
 		};
 
 		window.addEventListener('mousemove', handleMouseMove);
 		return () => window.removeEventListener('mousemove', handleMouseMove);
-	}, [camera, size]);
+	}, [gl]);
 
 	useEffect(() => {
 		const animate = () => {
 			requestAnimationFrame(animate);
 
-			if (cameraRef.current) {
-				const targetRotationX = mouse.current.y * 0.1;
-				const targetRotationY = -mouse.current.x * 0.15;
+			if (cameraRef.current && isOverCanvas.current) {
+				const targetX = mouse.current.y * 0.1;
+				const targetY = -mouse.current.x * 0.15;
 
 				cameraRef.current.rotation.x +=
-					(targetRotationX - cameraRef.current.rotation.x) * 0.05;
+					(targetX - cameraRef.current.rotation.x) * 0.05;
 				cameraRef.current.rotation.y +=
-					(targetRotationY - cameraRef.current.rotation.y) * 0.05;
+					(targetY - cameraRef.current.rotation.y) * 0.05;
 			}
 		};
 
 		animate();
 	}, []);
-
 	return (
 		<PerspectiveCamera
 			ref={cameraRef}
