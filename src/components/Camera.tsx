@@ -33,17 +33,24 @@ function Camera() {
 	}, [gl]);
 
 	useEffect(() => {
+		const initialRotation = { x: 0, y: 0 };
+
 		const animate = () => {
 			requestAnimationFrame(animate);
 
-			if (cameraRef.current && isOverCanvas.current) {
-				const targetX = mouse.current.y * 0.1;
-				const targetY = -mouse.current.x * 0.15;
+			if (cameraRef.current) {
+				const current = cameraRef.current.rotation;
+				if (isOverCanvas.current) {
+					const targetX = mouse.current.y * 0.1;
+					const targetY = -mouse.current.x * 0.15;
 
-				cameraRef.current.rotation.x +=
-					(targetX - cameraRef.current.rotation.x) * 0.05;
-				cameraRef.current.rotation.y +=
-					(targetY - cameraRef.current.rotation.y) * 0.05;
+					current.x += (targetX - current.x) * 0.05;
+					current.y += (targetY - current.y) * 0.05;
+				} else {
+					// Smoothly return to the initial rotation
+					current.x += (initialRotation.x - current.x) * 0.05;
+					current.y += (initialRotation.y - current.y) * 0.05;
+				}
 			}
 		};
 
