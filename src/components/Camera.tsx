@@ -9,8 +9,6 @@ export function Camera() {
 	const mouse = useRef({ x: 0, y: 0 });
 
 	useEffect(() => {
-		camera.layers.enable(1);
-
 		const handleMouseMove = (event: MouseEvent) => {
 			mouse.current.x = (event.clientX / size.width) * 2 - 1;
 			mouse.current.y = -(event.clientY / size.height) * 2 + 1;

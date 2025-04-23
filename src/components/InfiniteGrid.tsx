@@ -1,14 +1,17 @@
-import { useLoader, useFrame } from '@react-three/fiber';
+import { useFrame } from '@react-three/fiber';
+import { useTexture } from '@react-three/drei';
 import { useRef, useMemo } from 'react';
 import * as THREE from 'three';
 
 export function InfiniteGrid({ pos }: { pos: number }) {
 	const gridRef = useRef<THREE.Mesh>(null!);
-	const TEXTURE_PATH = 'src/assets/colorGrid.png';
-	const DISPLACEMENT_PATH = 'src/assets/displacementGrid.png';
 
-	const colorMap = useLoader(THREE.TextureLoader, TEXTURE_PATH);
-	const displacementMap = useLoader(THREE.TextureLoader, DISPLACEMENT_PATH);
+	const TEXTURE_PATH = '/colorGrid.png';
+	const DISPLACEMENT_PATH = '/displacementGrid.png';
+	const [colorMap, displacementMap] = useTexture([
+		TEXTURE_PATH,
+		DISPLACEMENT_PATH,
+	]);
 
 	const geometry = useMemo(() => {
 		return new THREE.PlaneGeometry(1, 2, 24, 24);
@@ -33,10 +36,10 @@ export function InfiniteGrid({ pos }: { pos: number }) {
 	return (
 		<mesh
 			ref={gridRef}
-			onUpdate={(self) => self.layers.set(1)}
 			rotation={[-Math.PI / 2, 0, 0]}
 			position={[0, -0.1, 0]}
 			geometry={geometry}
+			frustumCulled={false}
 		>
 			<meshStandardMaterial
 				map={colorMap}
@@ -45,8 +48,6 @@ export function InfiniteGrid({ pos }: { pos: number }) {
 				emissive={'#ffffff'}
 				displacementMap={displacementMap}
 				displacementScale={0.3}
-				metalness={0.96}
-				roughness={0.5}
 				color={'#ffffff'}
 				side={2}
 			/>
