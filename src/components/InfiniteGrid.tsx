@@ -3,7 +3,7 @@ import { useTexture } from '@react-three/drei';
 import { useRef, useMemo } from 'react';
 import * as THREE from 'three';
 
-export function InfiniteGrid({ pos }: { pos: number }) {
+function InfiniteGrid({ pos }: { pos: number }) {
 	const gridRef = useRef<THREE.Mesh>(null!);
 
 	const TEXTURE_PATH = '/colorGrid.png';
@@ -28,8 +28,8 @@ export function InfiniteGrid({ pos }: { pos: number }) {
 						? position + 1
 						: position - 1
 					: cycle % 2 === 0
-					? position - 1
-					: position + 1;
+						? position - 1
+						: position + 1;
 		}
 	});
 
@@ -54,3 +54,5 @@ export function InfiniteGrid({ pos }: { pos: number }) {
 		</mesh>
 	);
 }
+
+export default InfiniteGrid;

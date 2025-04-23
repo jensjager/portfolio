@@ -3,7 +3,7 @@ import { useThree } from '@react-three/fiber';
 import { useRef, useEffect } from 'react';
 import * as THREE from 'three';
 
-export function Camera() {
+function Camera() {
 	const cameraRef = useRef<THREE.PerspectiveCamera>(null);
 	const { gl } = useThree();
 	const mouse = useRef({ x: 0, y: 0 });
@@ -60,3 +60,5 @@ export function Camera() {
 		/>
 	);
 }
+
+export default Camera;
