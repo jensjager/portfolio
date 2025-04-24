@@ -1,10 +1,11 @@
 import { glowBoxShadowColor, getGlowBoxShadow } from '../styles/styleConstants';
+import { SocialIcon } from 'react-social-icons';
 
 function About() {
 	return (
 		<section
 			id='about'
-			className='text-light relative flex min-h-screen flex-col items-center justify-around px-8 pt-24 pb-30 text-center'
+			className='text-light relative flex flex-col items-center justify-around px-8 py-54 text-center'
 		>
 			<div
 				className='bg-dark border-tertiary flex flex-col items-center justify-around gap-4 rounded-lg border-2 p-8 md:flex-row'
@@ -12,17 +13,19 @@ function About() {
 					boxShadow: getGlowBoxShadow(glowBoxShadowColor),
 				}}
 			>
-				<div
-					className='bg-tertiary mb-6 max-h-60 max-w-60 basis-2/5 overflow-hidden rounded-full'
-					style={{
-						boxShadow: getGlowBoxShadow(glowBoxShadowColor),
-					}}
-				>
-					<img
-						src='/portrait.png'
-						alt='Jens Jäger'
-						className='h-full w-full -translate-x-1 object-cover'
-					/>
+				<div>
+					<div className='bg-tertiary hover:shadow-accent/50 shadow-tertiary/50 hover:bg-accent mb-6 max-h-60 max-w-60 basis-2/5 overflow-hidden rounded-full shadow-xl duration-300'>
+						<img
+							src='/portrait.png'
+							alt='Jens Jäger'
+							className='h-full w-full -translate-x-1 object-cover'
+						/>
+					</div>
+					<div className='flex flex-row justify-around gap-4'>
+						<SocialIcon url='https://www.linkedin.com/in/jens-jager' />
+						<SocialIcon url='https://www.facebook.com/jens.j.jager' />
+						<SocialIcon url='https://github.com/jensjager' />
+					</div>
 				</div>
 				<div className='flex flex-1 flex-col gap-4 md:max-w-[50%]'>
 					<h2 className='font-display mb-4 text-4xl'>About Me</h2>

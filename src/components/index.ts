@@ -4,3 +4,4 @@ export { default as Camera } from './Camera';
 export { default as HeroDivider } from './HeroDivider';
 export { default as HorizontalDivider } from './HorizontalDivider';
 export { default as SkillCard } from './SkillCard';
+export { default as Footer } from './Footer';
