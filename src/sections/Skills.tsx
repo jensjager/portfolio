@@ -31,7 +31,7 @@ function Skills() {
 	return (
 		<section
 			id='skills'
-			className='text-light relative z-0 flex min-h-screen flex-col justify-between px-8 py-24 text-center'
+			className='text-light relative z-0 flex flex-col justify-between px-8 py-24 text-center'
 		>
 			<h2 className='font-display text-light mb-12 text-4xl'>
 				My Skills
