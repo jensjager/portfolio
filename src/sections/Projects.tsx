@@ -2,6 +2,13 @@ import {
 	glowBoxShadowColorAccent,
 	getGlowBoxShadow,
 } from '../styles/styleConstants';
+import PIXI_PATH from '/pixiSlots.png';
+import LTI_PATH from '/lti.png';
+import BPMN_PATH from '/bpmnParser.svg';
+import KVBALTIC_PATH from '/kvbaltic.png';
+import PILLEHUNT_PATH from '/pillehunt.png';
+import ARTHARMONY_PATH from '/artharmony.png';
+
 import React from 'react';
 
 function Projects() {
@@ -11,26 +18,26 @@ function Projects() {
 			description:
 				'A interactive video slot machine game developed with PixiJS and TypeScript. Designed with a modular architecture for seamless scalability and smooth animation performance. Includes custom reel logic, symbol evaluation, and responsive UI for both desktop and mobile devices.',
 			link: ['https://jensjager.github.io/slots/'],
-			image: ['pixiSlots.png'],
+			image: [PIXI_PATH],
 		},
 		{
 			title: 'LTI Integration Tool',
 			description:
 				'A custom web-based tool built for seamless Moodle integration using the LTI standard. Enables secure student authentication, assignment submissions, automatic grading, and real-time result visualization for university courses. Developed with a focus on usability, extensibility, and academic workflow optimization.',
-			image: ['lti.png'],
+			image: [LTI_PATH],
 		},
 		{
 			title: 'Custom DSL and BPMN Parser',
 			description:
 				'A Rust-powered parser that transforms domain-specific language (DSL) inputs into BPMN diagrams. Designed for technical users to define business workflows textually and instantly visualize them. Features a robust syntax engine and exports compatible SVG diagrams for integration with workflow tools.',
 			link: ['https://github.com/jensjager/bpmn-parser'],
-			image: ['bpmnParser.svg'],
+			image: [BPMN_PATH],
 		},
 		{
 			title: 'WordPress Websites for Local Businesses',
 			description:
 				'Designed and developed custom WordPress websites from scratch, and contributed to ongoing development for others. Focused on user-friendly content management, clean responsive design, and performance. Worked with local businesses to align site functionality with brand goals and client needs.',
-			image: ['kvbaltic.png', 'pillehunt.png', 'artharmony.png'],
+			image: [KVBALTIC_PATH, PILLEHUNT_PATH, ARTHARMONY_PATH],
 			link: [
 				'https://kvbaltic.ee',
 				'https://pillehunt.ee',

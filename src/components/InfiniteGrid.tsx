@@ -3,11 +3,12 @@ import { useTexture } from '@react-three/drei';
 import { useRef, useMemo } from 'react';
 import * as THREE from 'three';
 
+import TEXTURE_PATH from '/colorGrid.png';
+import DISPLACEMENT_PATH from '/displacementGrid.png';
+
 function InfiniteGrid({ pos }: { pos: number }) {
 	const gridRef = useRef<THREE.Mesh>(null!);
 
-	const TEXTURE_PATH = '/colorGrid.png';
-	const DISPLACEMENT_PATH = '/displacementGrid.png';
 	const [colorMap, displacementMap] = useTexture([
 		TEXTURE_PATH,
 		DISPLACEMENT_PATH,

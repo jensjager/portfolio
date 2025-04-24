@@ -1,5 +1,6 @@
 import { glowBoxShadowColor, getGlowBoxShadow } from '../styles/styleConstants';
 import { SocialIcon } from 'react-social-icons';
+import PORTRAIT_PATH from '/portrait.png';
 
 function About() {
 	return (
@@ -16,7 +17,7 @@ function About() {
 				<div>
 					<div className='bg-tertiary hover:shadow-accent/50 shadow-tertiary/50 hover:bg-accent mb-6 max-h-60 max-w-60 basis-2/5 overflow-hidden rounded-full shadow-xl duration-300'>
 						<img
-							src='/portrait.png'
+							src={PORTRAIT_PATH}
 							alt='Jens Jäger'
 							className='h-full w-full -translate-x-1 object-cover'
 						/>
