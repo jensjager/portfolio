@@ -1,6 +1,6 @@
 import { ScrollDownIndicator } from '../components';
 
-export function Hero() {
+function Hero() {
 	return (
 		<section
 			id='hero'
@@ -19,3 +19,5 @@ export function Hero() {
 		</section>
 	);
 }
+
+export default Hero;
