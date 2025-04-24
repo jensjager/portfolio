@@ -1,6 +1,6 @@
 import { createRoot } from 'react-dom/client';
 import GridScene from './scenes/GridScene.tsx';
-import { Hero, About, Skills } from './sections/';
+import { Hero, About, Skills, Projects } from './sections/';
 import { HeroDivider, HorizontalDivider } from './components/';
 
 export default function App() {
@@ -13,6 +13,7 @@ export default function App() {
 			<HorizontalDivider />
 			<Skills />
 			<HorizontalDivider reverse />
+			<Projects />
 		</div>
 	);
 }

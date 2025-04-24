@@ -18,6 +18,7 @@
 
 	/* Text and Dark colors */
 	--color-dark: #2d0006;
+	--color-dark2: #3d040c;
 
 	/* Neutral shades */
 	--color-neutral: #b0b0b0;
@@ -32,15 +33,19 @@
 }
 
 .bg-hex {
-	--s: 250px;
+	--s: 500px;
 	background:
-		repeating-conic-gradient(from 30deg, #0000 0 120deg, #ce4257 0 180deg)
+		repeating-conic-gradient(
+				from 30deg,
+				#0000 0 120deg,
+				var(--color-dark) 0 180deg
+			)
 			calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
 		repeating-conic-gradient(
 			from 30deg,
-			#720026 0 60deg,
-			#4f000b 0 120deg,
-			#ce4257 0 180deg
+			var(--color-dark2) 0 60deg,
+			var(--color-secondary) 0 120deg,
+			var(--color-dark) 0 180deg
 		);
 	background-size: var(--s) calc(var(--s) * 0.577);
 }
