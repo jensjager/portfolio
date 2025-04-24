@@ -13,12 +13,6 @@ function HeroDivider() {
 	);
 	const [visibleCount, setVisibleCount] = useState(0);
 
-	const glowBoxShadow = `
-		0px 1px 10px rgba(255, 105, 105, 0.5),
-		0px 2px 4px rgba(255, 105, 105, 0.5),
-		0px 4px 8px rgba(255, 105, 105, 0.5),
-		0px 8px 16px rgba(255, 105, 105, 0.5)
-  	`;
 	useEffect(() => {
 		const updateCount = () => {
 			const availableWidth = window.innerWidth;
@@ -54,13 +48,13 @@ function HeroDivider() {
 				</div>
 			</div>
 
-			<div className='relative flex justify-around py-4'>
+			<div className='relative hidden justify-around py-4 sm:flex'>
 				{rotations.slice(0, visibleCount - 1).map((rotation, idx) => (
 					<GlowingBox key={idx} rotation={rotation} size={20} />
 				))}
 			</div>
 
-			<div className='relative flex justify-around py-4'>
+			<div className='relative hidden justify-around py-4 sm:flex'>
 				{rotations.slice(0, visibleCount - 2).map((rotation, idx) => (
 					<GlowingBox key={idx} rotation={rotation} size={10} />
 				))}

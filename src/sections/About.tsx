@@ -1,23 +1,19 @@
-import {
-	glowBoxShadowColor,
-	getGlowBoxShadow,
-	getGlowBoxShadowInset,
-} from '../styles/styleConstants';
+import { glowBoxShadowColor, getGlowBoxShadow } from '../styles/styleConstants';
 
 function About() {
 	return (
 		<section
 			id='about'
-			className='text-light relative flex min-h-screen items-center justify-center px-8 py-24 text-center'
+			className='text-light relative flex min-h-screen flex-col items-center justify-around px-8 pt-24 pb-30 text-center'
 		>
 			<div
-				className='bg-dark border-accent flex flex-col items-center justify-around gap-4 rounded-lg border-2 p-8 md:flex-row'
+				className='bg-dark border-tertiary flex flex-col items-center justify-around gap-4 rounded-lg border-2 p-8 md:flex-row'
 				style={{
 					boxShadow: getGlowBoxShadow(glowBoxShadowColor),
 				}}
 			>
 				<div
-					className='bg-accent mb-6 max-h-60 max-w-60 basis-2/5 overflow-hidden rounded-full'
+					className='bg-tertiary mb-6 max-h-60 max-w-60 basis-2/5 overflow-hidden rounded-full'
 					style={{
 						boxShadow: getGlowBoxShadow(glowBoxShadowColor),
 					}}

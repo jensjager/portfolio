@@ -1,4 +1,5 @@
 export const glowBoxShadowColor = 'rgba(255, 105, 105, 0.5)';
+export const glowBoxShadowColorAccent = 'rgba(244, 185, 66, 0.5)';
 export const glowBoxShadowColorDark = 'rgba(255, 105, 105, 0.2)';
 
 export const getGlowBoxShadow = (color: string) =>
