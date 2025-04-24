@@ -2,29 +2,29 @@
 
 @theme {
 	/* Primary color */
-	--color-primary: #f7609b; /* Pinkish color (Primary) */
+	--color-primary: #720026;
 
 	/* Secondary color */
-	--color-secondary: #2e1f47; /* Dark purple (Secondary) */
+	--color-secondary: #4f000b;
 
 	/* Accent color */
-	--color-accent: #e7a8d1; /* Lighter pink (Accent) */
+	--color-accent: #e7a8d1;
 
 	/* Background and Light colors */
-	--color-light: #f4f4f4; /* Light off-white (Background) */
-	--color-lightest: #fafafa; /* Soft white (Very light background) */
+	--color-light: #f4f4f4;
+	--color-lightest: #fafafa;
 
 	/* Text and Dark colors */
-	--color-dark: #280c1c; /* Dark text color */
+	--color-dark: #2d0006;
 
 	/* Neutral shades */
-	--color-neutral: #b0b0b0; /* Neutral gray */
-	--color-neutral-light: #e0e0e0; /* Lighter neutral gray */
+	--color-neutral: #b0b0b0;
+	--color-neutral-light: #e0e0e0;
 
 	/* Utility colors */
-	--color-warning: #ffcc00; /* Warning yellow */
-	--color-success: #4caf50; /* Success green */
-	--color-error: #f44336; /* Error red */
+	--color-warning: #ffcc00;
+	--color-success: #4caf50;
+	--color-error: #f44336;
 
 	/* Fonts */
 	--font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;

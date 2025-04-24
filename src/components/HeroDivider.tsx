@@ -8,11 +8,11 @@ function HeroDivider() {
 	);
 	const [visibleCount, setVisibleCount] = useState(0);
 
-	const pinkGlowBoxShadow = `
-		0px 1px 10px rgba(255, 147, 201, 0.5),
-		0px 2px 4px rgba(255, 147, 201, 0.5),
-		0px 4px 8px rgba(255, 147, 201, 0.5),
-		0px 8px 16px rgba(255, 105, 180, 0.5)
+	const glowBoxShadow = `
+		0px 1px 10px rgba(255, 105, 105, 0.5),
+		0px 2px 4px rgba(255, 105, 105, 0.5),
+		0px 4px 8px rgba(255, 105, 105, 0.5),
+		0px 8px 16px rgba(255, 105, 105, 0.5)
   	`;
 	useEffect(() => {
 		const updateCount = () => {
@@ -30,22 +30,22 @@ function HeroDivider() {
 		<div className='relative w-full bg-transparent'>
 			<div className='relative mx-auto'>
 				<div
-					className='grid h-16 gap-1 bg-pink-200 p-1'
+					className='grid h-16 gap-1 bg-red-300 p-1'
 					style={{
 						gridTemplateColumns: `repeat(${visibleCount}, 1fr)`,
-						boxShadow: pinkGlowBoxShadow,
+						boxShadow: glowBoxShadow,
 					}}
 				>
 					{rotations.slice(0, visibleCount).map((_, i) => (
 						<div
 							key={i}
-							className='bg-dark relative h-full'
+							className='bg-secondary relative h-full'
 							style={{
 								boxShadow: `
-									inset 0px 1px 10px rgba(255, 147, 201, 0.5),
-									inset 0px 2px 4px rgba(255, 147, 201, 0.5),
-									inset 0px 4px 8px rgba(255, 147, 201, 0.5),
-									inset 0px 8px 16px rgba(255, 105, 180, 0.5)`,
+									inset 0px 1px 10px rgba(255, 105, 105, 0.5),
+									inset 0px 2px 4px rgba(255, 105, 105, 0.5),
+									inset 0px 4px 8px rgba(255, 105, 105, 0.5),
+									inset 0px 8px 16px rgba(255, 105, 105, 0.5)`,
 							}}
 						/>
 					))}
@@ -68,22 +68,22 @@ function HeroDivider() {
 }
 
 function GlowingBox({ rotation, size }: { rotation: number; size: number }) {
-	const boxShadow = `
-		0px 1px 10px rgba(255, 147, 201, 0.5),
-		0px 2px 4px rgba(255, 147, 201, 0.5),
-		0px 4px 8px rgba(255, 147, 201, 0.5),
-		0px 8px 16px rgba(255, 105, 180, 0.5),
-		inset 0px 1px 10px rgba(255, 147, 201, 0.5),
-		inset 0px 2px 4px rgba(255, 147, 201, 0.5),
-		inset 0px 4px 8px rgba(255, 147, 201, 0.5),
-		inset 0px 8px 16px rgba(255, 105, 180, 0.5)
+	const glowBoxShadow = `
+		0px 1px 10px rgba(255, 105, 105, 0.5),
+		0px 2px 4px rgba(255, 105, 105, 0.5),
+		0px 4px 8px rgba(255, 105, 105, 0.5),
+		0px 8px 16px rgba(255, 105, 105, 0.5),
+		inset 0px 1px 10px rgba(255, 105, 105, 0.5),
+		inset 0px 2px 4px rgba(255, 105, 105, 0.5),
+		inset 0px 4px 8px rgba(255, 105, 105, 0.5),
+		inset 0px 8px 16px rgba(255, 105, 105, 0.5)
   	`;
 	return (
 		<div
-			className='max-w-[${size}] relative aspect-[3/5] w-full border-4 border-pink-200 after:p-[var(--customPadding)]'
+			className='max-w-[${size}] relative aspect-[3/5] w-full border-4 border-red-300'
 			style={{
 				maxWidth: `${size / 4}rem`,
-				boxShadow: boxShadow,
+				boxShadow: glowBoxShadow,
 				transform: `rotate(${rotation ?? 0}deg)`,
 				marginTop: rotation ? `${Math.abs(rotation) * 2}px` : '0px',
 				marginBottom: rotation ? `${-Math.abs(rotation) * 2}px` : '0px',

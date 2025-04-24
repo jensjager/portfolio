@@ -21,7 +21,7 @@ export default function GridScene() {
 			<EffectComposer>
 				<Bloom
 					mipmapBlur
-					intensity={1}
+					intensity={0.5}
 					luminanceThreshold={0.2}
 					luminanceSmoothing={0.9}
 				/>
